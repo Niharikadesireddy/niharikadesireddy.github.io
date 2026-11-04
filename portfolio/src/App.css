@@ -1,0 +1,588 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+
+:root {
+  --background: #f7f5ef;
+  --ink: #292b25;
+  --muted: #74776d;
+  --accent: #68734f;
+  --line: #dcded4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.site-shell {
+  width: min(100% - 72px, 1160px);
+  margin: auto;
+}
+
+/* ==========================================
+   NAVIGATION
+   ========================================== */
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--line);
+  gap: 24px;
+}
+
+.brand {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+.navigation nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  font-size: 13px;
+}
+
+.navigation a:hover,
+.text-link:hover {
+  color: var(--accent);
+}
+
+/* ==========================================
+   HERO
+   ========================================== */
+
+.hero {
+  min-height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 90px 0 120px;
+}
+
+.eyebrow,
+.section-label,
+.hero-footer,
+.project-number,
+.project-type {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero h1,
+.section h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+.hero h1 {
+  font-size: clamp(64px, 10vw, 136px);
+  line-height: 1;
+  margin: 30px 0;
+}
+
+.hero h1 em {
+  color: var(--accent);
+  font-weight: 400;
+}
+
+/* ==========================================
+   HERO CONTENT + PROFILE PHOTO
+   ========================================== */
+
+.hero-content {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(220px, 0.8fr);
+  gap: 65px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.hero-text {
+  min-width: 0;
+}
+
+.hero-description {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.hero-image-container {
+  width: 100%;
+  max-width: 310px;
+  justify-self: end;
+}
+
+.hero-profile-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  filter: saturate(0.85);
+  box-shadow: 0 16px 35px rgba(41, 43, 37, 0.07);
+}
+
+.text-link {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: 32px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero-footer {
+  position: absolute;
+  bottom: 34px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ==========================================
+   GENERAL SECTIONS
+   ========================================== */
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 50px;
+  padding: 115px 0;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 25px;
+}
+
+.section h2 {
+  font-size: clamp(40px, 5vw, 66px);
+  line-height: 1.12;
+  margin: 0 0 30px;
+}
+
+.section p {
+  max-width: 690px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   TECHNICAL SKILLS
+   ========================================== */
+
+.skills-list,
+.experience-list,
+.education-list {
+  border-top: 1px solid var(--line);
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns:
+    185px minmax(0, 1fr);
+  column-gap: 30px;
+  padding: 21px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.skill-row h3 {
+  margin: 3px 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.skill-row p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   PROFESSIONAL EXPERIENCE
+   ========================================== */
+
+.section .section-intro {
+  margin: -10px 0 30px;
+  font-size: 15px;
+}
+
+.experience-item {
+  padding: 31px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.experience-heading h3 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 27px;
+  font-weight: 400;
+  margin: 0 0 7px;
+}
+
+.company {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.experience-domain {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.experience-period {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+  margin-top: 8px;
+}
+
+.experience-item ul {
+  margin: 17px 0 12px;
+  padding-left: 21px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.experience-item li {
+  margin: 7px 0;
+}
+
+.experience-item .experience-stack {
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin: 10px 0 0;
+}
+
+/* ==========================================
+   PROJECTS
+   ========================================== */
+
+.project {
+  display: grid;
+  grid-template-columns:
+    50px minmax(0, 1fr) 150px;
+  gap: 20px;
+  padding: 35px 0;
+  border-top: 1px solid var(--line);
+  transition: padding-left 0.2s ease;
+}
+
+.project:hover {
+  padding-left: 12px;
+}
+
+.project h3 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 29px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.project p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.project-type {
+  text-align: right;
+  line-height: 1.8;
+}
+
+.project-featured {
+  padding: 40px 0 43px;
+}
+
+.project-heading {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.project-status {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  padding: 5px 8px;
+}
+
+.project-link {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: 18px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 5px;
+}
+
+.project-link:hover {
+  color: var(--accent);
+}
+
+/* ==========================================
+   ARCHITECTURE DIAGRAMS
+   ========================================== */
+
+.architecture {
+  border: 1px solid var(--line);
+  padding: 18px;
+  margin-top: 22px;
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.architecture-title {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.architecture-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.flow-step-group {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.flow-node {
+  border: 1px solid #c7cbbb;
+  padding: 10px 12px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--ink);
+  background: var(--background);
+}
+
+.flow-arrow {
+  color: var(--accent);
+  font-size: 18px;
+}
+
+/* ==========================================
+   PROJECT TECHNOLOGIES
+   ========================================== */
+
+.project-details {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-details span {
+  font-size: 11px;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  padding: 6px 9px;
+}
+
+.project .project-note {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   EDUCATION
+   ========================================== */
+
+.education-item {
+  padding: 27px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.education-item h3 {
+  margin: 0 0 10px;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.education-item p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.education-item span {
+  display: block;
+  margin-top: 9px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ==========================================
+   CONTACT
+   ========================================== */
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.contact-links .text-link {
+  margin-top: 20px;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.footer {
+  padding: 30px 0 50px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+   ========================================== */
+
+@media (max-width: 760px) {
+  .site-shell {
+    width: min(100% - 36px, 1160px);
+  }
+
+  .navigation {
+    align-items: flex-start;
+  }
+
+  .navigation nav {
+    gap: 11px 17px;
+    justify-content: flex-end;
+  }
+
+  .hero {
+    min-height: 580px;
+  }
+
+  .hero h1 {
+    font-size: clamp(58px, 13vw, 90px);
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero-image-container {
+    justify-self: start;
+    max-width: 260px;
+  }
+
+  .hero-footer {
+    gap: 20px;
+    font-size: 9px;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 75px 0;
+  }
+
+  .project {
+    grid-template-columns:
+      32px minmax(0, 1fr);
+  }
+
+  .project-type {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .experience-heading {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .experience-period {
+    margin-top: 0;
+  }
+
+  .footer {
+    gap: 20px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .project {
+    transition: none;
+  }
+}
